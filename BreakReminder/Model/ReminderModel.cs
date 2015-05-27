@@ -16,5 +16,6 @@ namespace BreakReminder.Model
             _startTime = startTime;
             _recurrenceMin = recurrenceMin;
         }
+
     }
 }
