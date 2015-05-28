@@ -10,7 +10,7 @@ namespace BreakReminder.ViewModel
 {
     public class ApplicationViewModel
     {
-         private ICommand _changePageCommand;
+        private ICommand _changePageCommand;
         private ViewModelBase _currentPageViewModel;
         private ObservableCollection<ViewModelBase> _pageViewModels;
 
@@ -20,6 +20,7 @@ namespace BreakReminder.ViewModel
         {
             _pageViewModels = listOfVM;
             _currentPageViewModel = firstVM;
+            _changePageCommand = new DelegateCommand(ExecuteChangePageCommand, CanExecuteChangePageCommand);
         }
 
         #endregion
@@ -58,6 +59,11 @@ namespace BreakReminder.ViewModel
         #endregion
 
         #region Private Methods
+
+        private bool CanExecuteChangePageCommand(object obj)
+        {
+            return true;
+        }
 
         private void ExecuteChangePageCommand(object obj)
         {

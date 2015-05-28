@@ -1,7 +1,5 @@
-﻿using BreakReminder.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,17 +13,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BreakReminder
+namespace BreakReminder.Controls
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for SettingConfigControl.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SettingConfigControl : UserControl
     {
-        public MainWindow()
+        public SettingConfigControl()
         {
-
-            DataContext = new ApplicationViewModel();
             InitializeComponent();
         }
     }
