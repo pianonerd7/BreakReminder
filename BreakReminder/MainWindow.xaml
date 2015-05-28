@@ -1,8 +1,31 @@
 ﻿<Window x:Class="BreakReminder.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
+
+    <i:Interaction.Triggers>
         
+    </i:Interaction.Triggers>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical">
+            <TextBlock TextWrapping="WrapWithOverflow" Text="Per how many minutes would you like a reminder?" />
+            <TextBox Text="{Binding RecurrenceMin}" />
+            <Button Content="Click to start" Command="{Binding StartCommand}"/>
+        </StackPanel>
+
     </Grid>
+    
 </Window>

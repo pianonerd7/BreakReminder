@@ -1,5 +1,7 @@
-﻿using System;
+﻿using BreakReminder.ViewModel;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +24,11 @@ namespace BreakReminder
     {
         public MainWindow()
         {
+            ObservableCollection<ViewModelBase> listOfVM = new ObservableCollection<ViewModelBase>{
+                new ReminderViewModel()
+            };
+
+            DataContext = new ApplicationViewModel(listOfVM, listOfVM[0]);
             InitializeComponent();
         }
     }

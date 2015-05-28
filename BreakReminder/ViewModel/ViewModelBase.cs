@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace BreakReminder.ViewModel
 {
     public class ViewModelBase : INotifyPropertyChanged
     {
+
+        #region INotifyProperty
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -22,5 +26,7 @@ namespace BreakReminder.ViewModel
                 handler(this, new PropertyChangedEventArgs(propertyName));
             }
         }
+
+        #endregion
     }
 }
