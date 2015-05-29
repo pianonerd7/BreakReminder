@@ -6,7 +6,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
-    <Grid DataContext="{Binding PageViewModels}">
+    <Grid DataContext="{Binding CurrentPageViewModel}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="8*"/>
@@ -21,7 +21,9 @@
         <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical">
             <TextBlock TextWrapping="WrapWithOverflow" Text="Per how many minutes would you like a reminder?" />
             <TextBox Text="{Binding RecurrenceMin}" />
-            <Button Content="Click to start" Command="{Binding StartCommand}"/>
+            <Button Content="Click to start" 
+                    Command="{Binding }"
+                    />
         </StackPanel>
 
     </Grid>

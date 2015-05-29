@@ -11,11 +11,11 @@ namespace BreakReminder.Model
 
         private DateTime _startTime;
         private long _recurrenceMin;
-        public ReminderModel(DateTime startTime, long recurrenceMin)
-        {
-            _startTime = startTime;
-            _recurrenceMin = recurrenceMin;
-        }
+        //public ReminderModel(DateTime startTime, long recurrenceMin)
+        //{
+        //    _startTime = startTime;
+        //    _recurrenceMin = recurrenceMin;
+        //}
 
     }
 }
