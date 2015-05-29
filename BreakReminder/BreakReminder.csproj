@@ -59,22 +59,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Controls\CountDownControl.xaml.cs">
+    <Compile Include="Control\CountDownControl.xaml.cs">
       <DependentUpon>CountDownControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\SettingConfigControl.xaml.cs">
-      <DependentUpon>SettingConfigControl.xaml</DependentUpon>
+    <Compile Include="Control\ReminderConfigControl.xaml.cs">
+      <DependentUpon>ReminderConfigControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\ApplicationViewModel.cs" />
     <Compile Include="ViewModel\CountDownViewModel.cs" />
     <Compile Include="ViewModel\DelegateCommand.cs" />
     <Compile Include="ViewModel\ReminderViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
-    <Page Include="Controls\CountDownControl.xaml">
+    <Page Include="Control\CountDownControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\SettingConfigControl.xaml">
+    <Page Include="Control\ReminderConfigControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BreakReminder.Controls
+namespace BreakReminder.Control
 {
     /// <summary>
-    /// Interaction logic for SettingConfigControl.xaml
+    /// Interaction logic for CountDownControl.xaml
     /// </summary>
-    public partial class SettingConfigControl : UserControl
+    public partial class CountDownControl : UserControl
     {
-        public SettingConfigControl()
+        public CountDownControl()
         {
             InitializeComponent();
         }
