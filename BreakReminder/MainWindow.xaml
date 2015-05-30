@@ -14,7 +14,7 @@
             <Control:CountDownControl Content="{Binding}" />
         </DataTemplate>
     </Window.Resources>
-    
+  
     <Border>
         <StackPanel>
             <ContentControl Content="{Binding CurrentView}" />
