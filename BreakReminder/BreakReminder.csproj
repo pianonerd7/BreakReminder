@@ -67,6 +67,7 @@
     </Compile>
     <Compile Include="ViewModel\CountDownViewModel.cs" />
     <Compile Include="ViewModel\DelegateCommand.cs" />
+    <Compile Include="ViewModel\NavigationViewModel.cs" />
     <Compile Include="ViewModel\ReminderViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Page Include="Control\CountDownControl.xaml">

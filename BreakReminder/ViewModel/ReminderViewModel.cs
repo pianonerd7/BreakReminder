@@ -16,21 +16,18 @@ namespace BreakReminder.ViewModel
 
         #region Private declarations
 
-        private DateTime _startTime;
-        private long _recurrenceMin;
         private readonly ICommand _startCommand;
-        private Page page;
 
         #endregion
 
         #region Constructor 
 
-        public ReminderViewModel (Page page)
+        public ReminderViewModel ()
         {
             _startTime = DateTime.Now;
             _recurrenceMin = 60;
-            _startCommand = new DelegateCommand(ExecuteStartCommand, CanExecuteStartCommand);
-            this.page = page;
+            //_startCommand = new DelegateCommand(ExecuteStartCommand, CanExecuteStartCommand);
+            base.page = page;
         }
 
         #endregion
@@ -84,12 +81,18 @@ namespace BreakReminder.ViewModel
             return true;
         }
 
-        private void ExecuteStartCommand(object obj)
-        {
-            //_startTime.AddMinutes(_recurrenceMin);
+        //private void ExecuteStartCommand(object obj)
+        //{
 
-            page.NavigationService.Navigate(new Uri("/Control/CountDownControl.xaml", UriKind.Relative));
-        }
+        //    ConfigStartTimeProp();
+        //    page.NavigationService.Navigate(new Uri("/Control/CountDownControl.xaml", UriKind.Relative));
+        //}
+
+        //private void ConfigStartTimeProp()
+        //{
+        //    _startTime = DateTime.Now;
+        //    _startTime.AddMinutes(_recurrenceMin);
+        //}
 
         #endregion
 

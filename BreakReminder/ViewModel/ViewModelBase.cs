@@ -5,12 +5,20 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace BreakReminder.ViewModel
 {
     public class ViewModelBase : INotifyPropertyChanged
     {
+        #region Private Properties
+
+        protected DateTime _startTime;
+        protected long _recurrenceMin;
+        protected Page page;
+
+        #endregion
 
         #region INotifyProperty
 

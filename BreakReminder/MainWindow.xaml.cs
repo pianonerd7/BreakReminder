@@ -1,4 +1,5 @@
-﻿using BreakReminder.ViewModel;
+﻿using BreakReminder.Control;
+using BreakReminder.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -20,17 +21,13 @@ namespace BreakReminder
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Page
+    public partial class MainWindow : Window
     {
         public MainWindow()
         {
-            //ObservableCollection<ViewModelBase> listOfVM = new ObservableCollection<ViewModelBase>{
-            //    new ReminderViewModel()
-            //};
+            //DataContext = new ReminderViewModel(this);
 
-            //DataContext = new ApplicationViewModel(listOfVM, listOfVM[0]);
-
-            DataContext = new ReminderViewModel(this);
+            DataContext = new NavigationViewModel(this, new ReminderViewModel(), new ReminderConfigControl());
             InitializeComponent();
         }
     }
