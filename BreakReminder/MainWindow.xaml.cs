@@ -20,15 +20,17 @@ namespace BreakReminder
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Page
     {
         public MainWindow()
         {
-            ObservableCollection<ViewModelBase> listOfVM = new ObservableCollection<ViewModelBase>{
-                new ReminderViewModel()
-            };
+            //ObservableCollection<ViewModelBase> listOfVM = new ObservableCollection<ViewModelBase>{
+            //    new ReminderViewModel()
+            //};
 
-            DataContext = new ApplicationViewModel(listOfVM, listOfVM[0]);
+            //DataContext = new ApplicationViewModel(listOfVM, listOfVM[0]);
+
+            DataContext = new ReminderViewModel(this);
             InitializeComponent();
         }
     }
