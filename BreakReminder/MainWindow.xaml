@@ -5,21 +5,7 @@
         xmlns:VM="clr-namespace:BreakReminder.ViewModel"
         xmlns:Control="clr-namespace:BreakReminder.Control"
         Title="MainWindow" Height="350" Width="525">
-    
-    <!--<Page.Resources>
-        <DataTemplate DataType="{x:Type VM:ReminderViewModel}" >
-            <Control:ReminderConfigControl Content="{Binding}" />
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type VM:CountDownViewModel}" >
-            <Control:CountDownControl Content="{Binding}" />
-        </DataTemplate>
-    </Page.Resources>
-  
-    <Border>
-        <StackPanel>
-            <ContentControl Content="{Binding CurrentView}" />
-        </StackPanel>
-    </Border>-->
-    
+        
     <Control:ReminderConfigControl/>
+    
 </Page>

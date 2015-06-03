@@ -65,7 +65,6 @@
     <Compile Include="Control\ReminderConfigControl.xaml.cs">
       <DependentUpon>ReminderConfigControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\ApplicationViewModel.cs" />
     <Compile Include="ViewModel\CountDownViewModel.cs" />
     <Compile Include="ViewModel\DelegateCommand.cs" />
     <Compile Include="ViewModel\ReminderViewModel.cs" />
