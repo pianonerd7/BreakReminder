@@ -17,11 +17,9 @@ namespace BreakReminder.ViewModel
         #region Private Declarations 
 
         private Window _mainWindow;
-        private ObservableCollection<ViewModelBase> _viewModelCollection;
-        private ObservableCollection<UserControl> _userControlCollection;
         private ViewModelBase _currentViewModel;
         private UserControl _currentControl;
-        private readonly ICommand _changeControlCommand;
+        private readonly ICommand _changeToCountDownCommand;
 
         #endregion
 
@@ -29,32 +27,33 @@ namespace BreakReminder.ViewModel
 
         public NavigationViewModel(Window mainWindow, ViewModelBase currentViewModel, UserControl currentControl)
         {
-            _mainWindow = mainWindow;
-
-            _viewModelCollection = new ObservableCollection<ViewModelBase>() 
-            {
-                currentViewModel
-            };
-
-            _userControlCollection = new ObservableCollection<UserControl>() 
-            {
-                currentControl
-            };
-                    
+            _mainWindow = mainWindow;           
             _currentViewModel = currentViewModel;
             _currentControl = currentControl;
-            _changeControlCommand = new DelegateCommand(ExecuteChangeControlCommand, CanExecuteChangeControlCommand);
+            _changeToCountDownCommand = new DelegateCommand(ExecuteChangeToCountDownCommand, CanExecuteCommand);
+        }
+
+        #endregion
+
+        #region Public Properties
+
+        public ViewModelBase CurrentViewModel
+        {
+            get
+            {
+                return _currentViewModel;
+            }
         }
 
         #endregion
 
         #region Public Commands
 
-        public ICommand ChangeControlCommand
+        public ICommand ChangeToCountDownCommand
         {
             get
             {
-                return _changeControlCommand;
+                return _changeToCountDownCommand;
             }
         }
 
@@ -62,22 +61,13 @@ namespace BreakReminder.ViewModel
 
         #region Private Methods
 
-        private bool CanExecuteChangeControlCommand(object obj)
+        private bool CanExecuteCommand(object obj)
         {
             return true;
         }
 
-        private void ExecuteChangeControlCommand(object obj)
+        private void ExecuteChangeToCountDownCommand(object obj)
         {
-            //string newViewName = obj as string;
-
-            //if (!_userControlCollection.Contains(newView))
-            //{
-            //    _userControlCollection.Add(newView);
-            //}
-
-            //_currentControl = newView;
-
             _mainWindow.Content = new CountDownControl();
         }
 

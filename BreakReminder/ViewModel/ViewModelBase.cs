@@ -16,7 +16,6 @@ namespace BreakReminder.ViewModel
 
         protected DateTime _startTime;
         protected long _recurrenceMin;
-        protected Page page;
 
         #endregion
 

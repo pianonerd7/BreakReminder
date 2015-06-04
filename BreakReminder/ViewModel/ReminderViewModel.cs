@@ -14,20 +14,12 @@ namespace BreakReminder.ViewModel
     public class ReminderViewModel : ViewModelBase
     {
 
-        #region Private declarations
-
-        private readonly ICommand _startCommand;
-
-        #endregion
-
         #region Constructor 
 
-        public ReminderViewModel ()
+        public ReminderViewModel()
         {
             _startTime = DateTime.Now;
             _recurrenceMin = 60;
-            //_startCommand = new DelegateCommand(ExecuteStartCommand, CanExecuteStartCommand);
-            base.page = page;
         }
 
         #endregion
@@ -59,40 +51,6 @@ namespace BreakReminder.ViewModel
                 OnPropertyChanged("RecurrenceMin");
             }
         }
-
-        #endregion
-
-        #region Commands
-
-        public ICommand StartCommand
-        {
-            get
-            {
-                return _startCommand;
-            }
-        }
-
-        #endregion
-
-        #region Private Methods
-
-        private bool CanExecuteStartCommand(object obj)
-        {
-            return true;
-        }
-
-        //private void ExecuteStartCommand(object obj)
-        //{
-
-        //    ConfigStartTimeProp();
-        //    page.NavigationService.Navigate(new Uri("/Control/CountDownControl.xaml", UriKind.Relative));
-        //}
-
-        //private void ConfigStartTimeProp()
-        //{
-        //    _startTime = DateTime.Now;
-        //    _startTime.AddMinutes(_recurrenceMin);
-        //}
 
         #endregion
 

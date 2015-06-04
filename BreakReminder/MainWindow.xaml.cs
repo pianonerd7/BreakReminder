@@ -25,8 +25,6 @@ namespace BreakReminder
     {
         public MainWindow()
         {
-            //DataContext = new ReminderViewModel(this);
-
             DataContext = new NavigationViewModel(this, new ReminderViewModel(), new ReminderConfigControl());
             InitializeComponent();
         }
