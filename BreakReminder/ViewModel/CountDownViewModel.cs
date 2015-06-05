@@ -19,10 +19,10 @@ namespace BreakReminder.ViewModel
 
         #region Constructor
 
-        public CountDownViewModel()
+        public CountDownViewModel(long numMin)
         {
             timer = new DispatcherTimer();
-            _displayTime = RecurrenceMin * 5;
+            _displayTime = numMin * 60;
             Countdown();
         }
 

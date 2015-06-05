@@ -12,6 +12,7 @@ namespace BreakReminder.ViewModel
 {
     public class ViewModelBase : INotifyPropertyChanged
     {
+
         #region Private Properties
 
         protected DateTime _startTime;
