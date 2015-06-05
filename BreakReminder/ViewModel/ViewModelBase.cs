@@ -19,6 +19,36 @@ namespace BreakReminder.ViewModel
 
         #endregion
 
+        #region Public Properties
+
+        public DateTime StartTime
+        {
+            get
+            {
+                return _startTime;
+            }
+            set
+            {
+                _startTime = value;
+                OnPropertyChanged("StartTime");
+            }
+        }
+
+        public long RecurrenceMin
+        {
+            get
+            {
+                return _recurrenceMin;
+            }
+            set
+            {
+                _recurrenceMin = value;
+                OnPropertyChanged("RecurrenceMin");
+            }
+        }
+
+        #endregion
+
         #region INotifyProperty
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -20,7 +20,7 @@
 
         <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical">
             <TextBlock TextWrapping="WrapWithOverflow" Text="Per how many minutes would you like a reminder?" />
-            <TextBox Text="{Binding CurrentViewModel.RecurrenceMin}" />
+            <TextBox Text="{Binding CurrentViewModel.RecurrenceMin, Mode=TwoWay}" />
             <Button Content="Click to start" Command="{Binding ChangeToCountDownCommand}"/>
         </StackPanel>
 

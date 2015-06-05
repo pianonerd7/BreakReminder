@@ -69,6 +69,7 @@ namespace BreakReminder.ViewModel
         private void ExecuteChangeToCountDownCommand(object obj)
         {
             _mainWindow.Content = new CountDownControl();
+            _currentViewModel = new CountDownViewModel();
         }
 
         #endregion
