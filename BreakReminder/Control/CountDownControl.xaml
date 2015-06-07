@@ -6,7 +6,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <StackPanel>
-        <TextBlock Text="yoyoyo" />
-        <TextBlock Text="{Binding CurrentViewModel.DisplayTime}" />
+        <TextBlock Text="{Binding CurrentViewModel.DisplayTime}" FontSize="72"/>
     </StackPanel>
 </UserControl>

@@ -12,8 +12,10 @@ namespace BreakReminder.ViewModel
 
         #region Private Declaration
 
-        private long _displayTime;
-        private DispatcherTimer timer;
+        private long _timerCounter;
+        private string _displayTime;
+        private DispatcherTimer _timer;
+        private DateTime _time;
 
         #endregion
 
@@ -21,8 +23,10 @@ namespace BreakReminder.ViewModel
 
         public CountDownViewModel(long numMin)
         {
-            timer = new DispatcherTimer();
-            _displayTime = numMin * 60;
+            _timer = new DispatcherTimer();
+            _timerCounter = numMin * 60;
+            _time = new DateTime(2015, 1, 1, 0, 0, 0);
+            _time = _time.AddSeconds(_timerCounter);
             Countdown();
         }
 
@@ -30,7 +34,7 @@ namespace BreakReminder.ViewModel
 
         #region Public Properties
 
-        public long DisplayTime
+        public string DisplayTime
         {
             get
             {
@@ -49,9 +53,9 @@ namespace BreakReminder.ViewModel
         private void Countdown()
         {
             
-            timer.Interval = new TimeSpan(0, 0, 1);
+            _timer.Interval = new TimeSpan(0, 0, 1);
 
-            timer.Tick += Ticker;
+            _timer.Tick += Ticker;
             //timer.Tick += (_, a) =>
             //    {
             //        if (numSeconds-- == 0)
@@ -65,18 +69,20 @@ namespace BreakReminder.ViewModel
             //    };
             //curTime(numSeconds);
 
-            timer.Start();
+            _timer.Start();
         }
  
         private void Ticker(object sender, EventArgs e)
         {
-            if (DisplayTime == 0)
+            if (_timerCounter == 0)
             {
-                timer.Stop();
+                _timer.Stop();
                 return;
             }
 
-            DisplayTime--;
+            //_timerCounter--;
+            _time = _time.AddSeconds(-1);
+            DisplayTime = String.Format("{0}:{1}:{2}", _time.Hour, _time.Minute, _time.Second);
 
         }
         #endregion
