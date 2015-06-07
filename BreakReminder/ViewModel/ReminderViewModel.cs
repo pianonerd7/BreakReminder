@@ -19,7 +19,7 @@ namespace BreakReminder.ViewModel
         public ReminderViewModel()
         {
 
-            RecurrenceMin = 60;
+            RecurrenceMin = 5;
         }
 
         #endregion

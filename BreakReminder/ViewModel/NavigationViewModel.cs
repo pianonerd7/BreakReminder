@@ -86,7 +86,7 @@ namespace BreakReminder.ViewModel
         {
             _currentControl = new ReminderControl();
             _mainWindow.Content = _currentControl;
-            
+            _mainWindow.Activate();
         }
         #endregion
     }

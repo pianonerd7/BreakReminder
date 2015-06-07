@@ -25,7 +25,7 @@ namespace BreakReminder.ViewModel
         public CountDownViewModel(long numMin, NavigationViewModel navVM)
         {
             _timer = new DispatcherTimer();
-            _timerCounter = numMin * 60;
+            _timerCounter = numMin;// *60;
             _time = new DateTime(2015, 1, 1, 0, 0, 0);
             _time = _time.AddSeconds(_timerCounter);
             _navVM = navVM;
