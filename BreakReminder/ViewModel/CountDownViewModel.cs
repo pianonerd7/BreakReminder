@@ -56,18 +56,6 @@ namespace BreakReminder.ViewModel
             _timer.Interval = new TimeSpan(0, 0, 1);
 
             _timer.Tick += Ticker;
-            //timer.Tick += (_, a) =>
-            //    {
-            //        if (numSeconds-- == 0)
-            //        {
-            //            timer.Stop();
-            //        }
-            //        else
-            //        {
-            //            curTime(numSeconds);
-            //        }
-            //    };
-            //curTime(numSeconds);
 
             _timer.Start();
         }
@@ -80,7 +68,7 @@ namespace BreakReminder.ViewModel
                 return;
             }
 
-            //_timerCounter--;
+            _timerCounter--;
             _time = _time.AddSeconds(-1);
             DisplayTime = String.Format("{0}:{1}:{2}", _time.Hour, _time.Minute, _time.Second);
 
