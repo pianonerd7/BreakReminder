@@ -65,6 +65,9 @@
     <Compile Include="Control\ReminderConfigControl.xaml.cs">
       <DependentUpon>ReminderConfigControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Control\ReminderControl.xaml.cs">
+      <DependentUpon>ReminderControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\CountDownViewModel.cs" />
     <Compile Include="ViewModel\DelegateCommand.cs" />
     <Compile Include="ViewModel\NavigationViewModel.cs" />
@@ -75,6 +78,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Control\ReminderConfigControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\ReminderControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

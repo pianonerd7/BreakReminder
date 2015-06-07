@@ -16,17 +16,19 @@ namespace BreakReminder.ViewModel
         private string _displayTime;
         private DispatcherTimer _timer;
         private DateTime _time;
+        private NavigationViewModel _navVM;
 
         #endregion
 
         #region Constructor
 
-        public CountDownViewModel(long numMin)
+        public CountDownViewModel(long numMin, NavigationViewModel navVM)
         {
             _timer = new DispatcherTimer();
             _timerCounter = numMin * 60;
             _time = new DateTime(2015, 1, 1, 0, 0, 0);
             _time = _time.AddSeconds(_timerCounter);
+            _navVM = navVM;
             Countdown();
         }
 
@@ -65,6 +67,8 @@ namespace BreakReminder.ViewModel
             if (_timerCounter == 0)
             {
                 _timer.Stop();
+                _navVM.ShowReminderCommand.Execute(new object());
+               
                 return;
             }
 

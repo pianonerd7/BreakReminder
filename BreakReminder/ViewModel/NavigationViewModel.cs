@@ -20,6 +20,7 @@ namespace BreakReminder.ViewModel
         private ViewModelBase _currentViewModel;
         private UserControl _currentControl;
         private readonly ICommand _changeToCountDownCommand;
+        private readonly ICommand _showReminderCommand;
 
         #endregion
 
@@ -31,6 +32,7 @@ namespace BreakReminder.ViewModel
             _currentViewModel = currentViewModel;
             _currentControl = currentControl;
             _changeToCountDownCommand = new DelegateCommand(ExecuteChangeToCountDownCommand, CanExecuteCommand);
+            _showReminderCommand = new DelegateCommand(ExecuteShowReminderCommand, CanExecuteCommand);
         }
 
         #endregion
@@ -57,6 +59,14 @@ namespace BreakReminder.ViewModel
             }
         }
 
+        public ICommand ShowReminderCommand
+        {
+            get
+            {
+                return _showReminderCommand;
+            }
+        }
+
         #endregion
 
         #region Private Methods
@@ -65,13 +75,19 @@ namespace BreakReminder.ViewModel
         {
             return true;
         }
-
+        
         private void ExecuteChangeToCountDownCommand(object obj)
         {
             _mainWindow.Content = new CountDownControl();          
-            _currentViewModel = new CountDownViewModel(_currentViewModel.RecurrenceMin);
+            _currentViewModel = new CountDownViewModel(_currentViewModel.RecurrenceMin, this);
         }
 
+        private void ExecuteShowReminderCommand(object obj)
+        {
+            _currentControl = new ReminderControl();
+            _mainWindow.Content = _currentControl;
+            
+        }
         #endregion
     }
 }
