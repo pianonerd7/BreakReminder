@@ -6,6 +6,29 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
+    <UserControl.Resources>
+        <Style TargetType="Button">            
+            <Setter Property="IsEnabled" Value="true" />
+            <Setter Property="Template" >
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button" >
+                        <Border BorderBrush="Transparent" 
+                                BorderThickness="5" 
+                                Background="DeepSkyBlue" 
+                                Padding="5" 
+                                CornerRadius="20">
+                            <Grid Background="DeepSkyBlue" >
+                                <ContentPresenter HorizontalAlignment="Center" 
+                                                  VerticalAlignment="Center"/>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            
+        </Style>
+    </UserControl.Resources>
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -19,9 +42,17 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical">
-            <TextBlock TextWrapping="WrapWithOverflow" Text="Per how many minutes would you like a reminder?" />
-            <TextBox Text="{Binding CurrentViewModel.RecurrenceMin, Mode=TwoWay}" />
-            <Button Content="Click to start" Command="{Binding ChangeToCountDownCommand}"/>
+            <TextBlock TextWrapping="WrapWithOverflow" 
+                       TextAlignment="Center"
+                       FontSize="20"
+                       Text="Per how many minutes would you like a reminder?" />
+            <TextBox Text="{Binding CurrentViewModel.RecurrenceMin, Mode=TwoWay}"
+                     FontSize="20"
+                     TextAlignment="Center"/>
+            <Button Content="Click to Start Timer" 
+                    FontSize="20"
+                    Command="{Binding ChangeToCountDownCommand}"
+                    />
         </StackPanel>
 
     </Grid>

@@ -86,6 +86,7 @@ namespace BreakReminder.ViewModel
         {
             _currentControl = new ReminderControl();
             _mainWindow.Content = _currentControl;
+            _mainWindow.WindowState = WindowState.Maximized;
             _mainWindow.Activate();
         }
         #endregion

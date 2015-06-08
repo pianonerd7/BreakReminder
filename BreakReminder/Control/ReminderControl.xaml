@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="BreakReminder.Control.CountDownControl"
+﻿<UserControl x:Class="BreakReminder.Control.ReminderControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -16,9 +16,12 @@
             <RowDefinition Height="8*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
         <TextBlock Grid.Column="1" Grid.Row="1" 
                    HorizontalAlignment="Center" VerticalAlignment="Center"
-                   Text="{Binding CurrentViewModel.DisplayTime}" FontSize="80"/>
+                   FontWeight="ExtraBold"
+                   FontSize="80"
+                   TextWrapping="WrapWithOverflow"
+                   TextAlignment="Center"
+                   Text="IT'S TIME TO TAKE A BREAK!!!" />
     </Grid>
 </UserControl>
