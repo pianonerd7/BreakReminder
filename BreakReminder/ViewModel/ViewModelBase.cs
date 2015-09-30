@@ -16,7 +16,7 @@ namespace BreakReminder.ViewModel
         #region Private Properties
 
         protected DateTime _startTime;
-        protected long _recurrenceMin;
+        protected double _recurrenceMin;
 
         #endregion
 
@@ -35,7 +35,7 @@ namespace BreakReminder.ViewModel
             }
         }
 
-        public long RecurrenceMin
+        public double RecurrenceMin
         {
             get
             {
